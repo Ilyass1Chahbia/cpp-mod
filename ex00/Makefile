@@ -6,7 +6,7 @@
 #    By: ilchahbi <ilchahbi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/12 14:33:44 by ilchahbi          #+#    #+#              #
-#    Updated: 2025/01/12 16:22:35 by ilchahbi         ###   ########.fr        #
+#    Updated: 2025/01/12 16:37:34 by ilchahbi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,9 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJ)
+	@rm -rf $(OBJ)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
