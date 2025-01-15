@@ -6,7 +6,7 @@
 /*   By: ilchahbi <ilchahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 18:51:07 by ilchahbi          #+#    #+#             */
-/*   Updated: 2025/01/15 16:04:28 by ilchahbi         ###   ########.fr       */
+/*   Updated: 2025/01/15 19:44:04 by ilchahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,10 @@ int main()
 				exit(1);
 			std::cout << "Enter The Contact's Index : ";
 			std::getline(std::cin, input);
-			nb = std::stoi(input);
+			if (std::cin.eof())
+				exit(1);
+			std::istringstream str(input);
+			str >> nb;
 			bk.show_client(nb);
 		}
 		else if (input == "EXIT")
