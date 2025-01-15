@@ -6,7 +6,7 @@
 /*   By: ilchahbi <ilchahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:55:51 by ilchahbi          #+#    #+#             */
-/*   Updated: 2025/01/14 18:19:58 by ilchahbi         ###   ########.fr       */
+/*   Updated: 2025/01/15 15:24:27 by ilchahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PHONEBOOK_HPP
 
 #include <iostream>
+#include <iomanip>
 
 class contact
 {
@@ -30,8 +31,12 @@ public:
     void	getnum(std::string str);
     void	getdsec(std::string str);
     int     allisdig(std::string str);
-    void	showlist();
-
+    std::string retfname();
+    std::string retlname();
+    std::string retnname();
+    std::string retnum();
+    std::string retdsec();
+    bool	    allempty();
 };
 
 class phonebook
@@ -40,7 +45,9 @@ private:
     contact client[8];
 public:
     void    writebook(contact pb);
-}
+    void    show_contacts();
+    void    show_client(int index);
+};
 
 
 #endif

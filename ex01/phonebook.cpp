@@ -6,7 +6,7 @@
 /*   By: ilchahbi <ilchahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 18:51:07 by ilchahbi          #+#    #+#             */
-/*   Updated: 2025/01/14 18:24:14 by ilchahbi         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:04:28 by ilchahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 int main()
 {
-    int         n;
-    std::string input;
-    contact   	pb;
 	phonebook	bk;
-    
+	int         nb;
+	std::string input;
 	while (1)
 	{
+		contact   	pb;
 		if (std::cin.eof())
 			exit(1);
 		std::cout << "Select ADD, SEARCH or EXIT : " << std::endl;
@@ -41,7 +40,7 @@ int main()
 				exit(1);
 			std::cout << "Enter Nick-Name : ";
 			std::getline(std::cin, input);
-			pb.getfname(input);
+			pb.getnname(input);
 			if (std::cin.eof())
 				exit(1);
 			std::cout << "Enter Phone-Number : ";
@@ -53,10 +52,18 @@ int main()
 				exit(1);
 			std::cout << "Enter Darkest Secret : ";
 			std::getline(std::cin, input);
-			pb.getfname(input);
+			pb.getdsec(input);
 			bk.writebook(pb);
-			
-			
+		}
+		else if (input == "SEARCH")
+		{
+			bk.show_contacts();
+			if (std::cin.eof())
+				exit(1);
+			std::cout << "Enter The Contact's Index : ";
+			std::getline(std::cin, input);
+			nb = std::stoi(input);
+			bk.show_client(nb);
 		}
 		else if (input == "EXIT")
 		{

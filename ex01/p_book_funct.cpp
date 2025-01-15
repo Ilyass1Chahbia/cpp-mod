@@ -6,7 +6,7 @@
 /*   By: ilchahbi <ilchahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:24:30 by ilchahbi          #+#    #+#             */
-/*   Updated: 2025/01/14 18:20:23 by ilchahbi         ###   ########.fr       */
+/*   Updated: 2025/01/15 14:47:41 by ilchahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void	contact::getnum(std::string str)
 	num = str;
 }
 
-void	contact::showlist()
+bool	contact::allempty()
 {
-	std::cout << "here : " << first << std::endl;
+	return (first.empty());
 }
 
 void	contact::getdsec(std::string str)
